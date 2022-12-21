@@ -6,9 +6,9 @@ const useStyles = createStyles((theme) => ({
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundImage:
-      "linear-gradient(250deg, rgba(130, 201, 30, 0) 0%, #062343 70%), url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80)",
+      "linear-gradient(250deg, rgba(130, 201, 30, 0) 0%, #062343 70%), url(https://pbs.twimg.com/profile_banners/2244994945/1660405530/600x200)",
     paddingTop: theme.spacing.xl * 3,
-        paddingBottom: theme.spacing.xl * 3,
+    paddingBottom: theme.spacing.xl * 3,
     marginBottom: theme.spacing.xl * 3,
   },
 
@@ -71,7 +71,7 @@ const useStyles = createStyles((theme) => ({
 
     [theme.fn.smallerThan("md")]: {
       width: "100%",
-      },
+    },
   },
 }));
 
@@ -110,51 +110,7 @@ export default function ExpertiseSection() {
             >
               Get started
             </Button>
-            <Button
-              variant="gradient"
-              gradient={{ from: "pink", to: "yellow" }}
-              size="xl"
-              className={classes.control}
-              mt={40}
-            >
-              Get started
-            </Button>
-            <Button
-              variant="gradient"
-              gradient={{ from: "pink", to: "yellow" }}
-              size="xl"
-              className={classes.control}
-              mt={40}
-            >
-              Get started
-            </Button>
-            <Button
-              variant="gradient"
-              gradient={{ from: "pink", to: "yellow" }}
-              size="xl"
-              className={classes.control}
-              mt={40}
-            >
-              Get started
-            </Button>
-            <Button
-              variant="gradient"
-              gradient={{ from: "pink", to: "yellow" }}
-              size="xl"
-              className={classes.control}
-              mt={40}
-            >
-              Get started
-            </Button>
-            <Button
-              variant="gradient"
-              gradient={{ from: "pink", to: "yellow" }}
-              size="xl"
-              className={classes.control}
-              mt={40}
-            >
-              Get started
-            </Button>
+
           </div>
         </div>
       </Container>

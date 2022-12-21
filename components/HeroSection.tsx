@@ -30,9 +30,25 @@ const useStyles = createStyles((theme) => ({
   },
 
   title: {
+    backgroundImage:
+      theme.colorScheme === "dark"
+        ? theme.white
+        : "linear-gradient(45deg, rgba(19,17,28,1) 0%, rgba(84,24,77,1) 100%)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    fontFamily: "Clash Grotesk, sans-serif",
+    fontSize: 92,
+    lineHeight: 1.2,
+    fontWeight: 800,
+
+    [theme.fn.smallerThan("xs")]: {
+      fontSize: 52,
+    },
+  },
+
+  subtitle: {
     color: theme.colorScheme === "dark" ? theme.white : theme.black,
-    fontFamily: 'General Sans, sans-serif',
-    fontSize: 44,
+    fontSize: 36,
     lineHeight: 1.2,
     fontWeight: 800,
 
@@ -42,6 +58,8 @@ const useStyles = createStyles((theme) => ({
   },
 
   control: {
+    background:
+      "linear-gradient(69deg, rgba(128,26,230,1) 0%, rgba(133,10,194,1) 100%)",
     [theme.fn.smallerThan("xs")]: {
       flex: 1,
     },
@@ -57,10 +75,7 @@ const useStyles = createStyles((theme) => ({
 
   highlight: {
     position: "relative",
-    backgroundColor: theme.fn.variant({
-      variant: "light",
-      color: theme.primaryColor,
-    }).background,
+    backgroundColor: "#bb00ff40",
     borderRadius: theme.radius.sm,
     padding: "4px 12px",
   },
@@ -73,10 +88,8 @@ export default function HeroBullets() {
       <Container>
         <div className={classes.inner}>
           <div className={classes.content}>
-            <Title className={classes.title}>
-              Atharane
-            </Title>
-            <Title className={classes.title}>
+            <Title className={classes.title}>Atharane</Title>
+            <Title className={classes.subtitle}>
               A <span className={classes.highlight}>modern</span> React <br />{" "}
               components library
             </Title>
@@ -91,8 +104,8 @@ export default function HeroBullets() {
               spacing="sm"
               size="sm"
               icon={
-                <ThemeIcon size={20} radius="xl">
-                  <IconCheck size={12} stroke={1.5} />
+                <ThemeIcon size={20} radius="xl" color={"#853bce"}>
+                  <IconCheck color={"#291839"} size={12} stroke={3} />
                 </ThemeIcon>
               }
             >
@@ -112,22 +125,15 @@ export default function HeroBullets() {
 
             <Group mt={30}>
               <Button radius="xl" size="md" className={classes.control}>
-                Get started
+                Download Resume
               </Button>
-              <Button
-                variant="default"
-                radius="xl"
-                size="md"
-                className={classes.control}
-              >
-                Source code
+
+              <Button radius="xl" size="md" className={classes.control}>
+                View Blogs
               </Button>
             </Group>
           </div>
-          <Image
-            src="images/behance.png"
-            className={classes.image}
-          />
+          <Image src="images/behance.png" className={classes.image} />
         </div>
       </Container>
     </div>

@@ -246,6 +246,7 @@
       transparent 0%,
       rgb(var(--background-end-rgb)) 40%
     );
+    /* color: #80008043 */
     z-index: 1;
   }
 }

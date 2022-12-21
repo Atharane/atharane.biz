@@ -18,7 +18,7 @@ export default function App(props: AppProps) {
           rel="stylesheet"
         />
         <link
-          href="https://api.fontshare.com/v2/css?f[]=general-sans@800&display=swap"
+          href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@600&display=swap"
           rel="stylesheet"
         />
       </Head>
@@ -29,8 +29,8 @@ export default function App(props: AppProps) {
         theme={{
           fontFamily: "Supreme, sans-serif",
           fontFamilyMonospace: "monospace",
-          headings: { fontFamily: "General Sans, sans-serif" },
-          colorScheme: "light",
+          headings: { fontFamily: "'Clash Grotesk', sans-serif" },
+          colorScheme: "dark",
         }}
       >
         <Component {...pageProps} />
