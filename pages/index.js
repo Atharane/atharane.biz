@@ -1,6 +1,9 @@
 import Head from "next/head";
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection"
+import CarousalSection from "../components/CarousalSection";
+import ExpertiseSection from "../components/ExpertiseSection";
+import ExperienceSection from "../components/ExperienceSection";
 import Footer from "../components/Footer";
 
 export default function Home() {
@@ -15,7 +18,10 @@ export default function Home() {
 
       <main>
         <Navbar />
-         <HeroSection />
+        <HeroSection />
+        <ExpertiseSection />
+        <CarousalSection />
+        <ExperienceSection />
         <Footer/>
       </main>
     </>
