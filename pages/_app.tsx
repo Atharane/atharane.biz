@@ -13,13 +13,23 @@ export default function App(props: AppProps) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=supreme@400,500,700&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=general-sans@800&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
       <MantineProvider
         withGlobalStyles
         withNormalizeCSS
         theme={{
-          /** Put your mantine theme override here */
+          fontFamily: "Supreme, sans-serif",
+          fontFamilyMonospace: "monospace",
+          headings: { fontFamily: "General Sans, sans-serif" },
           colorScheme: "light",
         }}
       >
