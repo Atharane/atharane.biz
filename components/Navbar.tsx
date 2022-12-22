@@ -20,6 +20,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   dropdown: {
+    backgroundColor: "#201022",
     position: "absolute",
     top: HEADER_HEIGHT,
     left: 0,
@@ -74,9 +75,7 @@ const useStyles = createStyles((theme) => ({
 
     "&:hover": {
       backgroundColor:
-        theme.colorScheme === "dark"
-          ? theme.colors.dark[6]
-          : theme.colors.gray[0],
+        theme.colorScheme === "dark" ? "#481741" : theme.colors.gray[0],
     },
 
     [theme.fn.smallerThan("sm")]: {
@@ -87,10 +86,7 @@ const useStyles = createStyles((theme) => ({
 
   linkActive: {
     "&, &:hover": {
-      backgroundColor: theme.fn.variant({
-        variant: "light",
-        color: theme.primaryColor,
-      }).background,
+      backgroundColor: "#1e1021",
       color: theme.fn.variant({ variant: "light", color: theme.primaryColor })
         .color,
     },
