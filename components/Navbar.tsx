@@ -16,6 +16,7 @@ const useStyles = createStyles((theme) => ({
   root: {
     position: "relative",
     zIndex: 1,
+    backgroundColor: "transparent",
   },
 
   dropdown: {
