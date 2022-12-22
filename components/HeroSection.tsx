@@ -9,14 +9,21 @@ import {
   List,
   ThemeIcon,
 } from "@mantine/core";
-import { IconCheck } from "@tabler/icons";
+import { IconStar } from "@tabler/icons";
 
 const useStyles = createStyles((theme) => ({
+  root: {
+    minHeight: "90vh",
+    display: "flex",
+    alignItems: "center",
+    // add skewed bottom border
+    // clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 6vw))",
+  },
   inner: {
     display: "flex",
     justifyContent: "space-between",
     paddingTop: theme.spacing.xl * 4,
-    paddingBottom: theme.spacing.xl * 4
+    paddingBottom: theme.spacing.xl * 4,
   },
 
   content: {
@@ -84,7 +91,7 @@ const useStyles = createStyles((theme) => ({
 export default function HeroBullets() {
   const { classes } = useStyles();
   return (
-    <div >
+    <div className={classes.root}>
       <Container>
         <div className={classes.inner}>
           <div className={classes.content}>
@@ -102,14 +109,28 @@ export default function HeroBullets() {
               to developing scalable web applications, constantly striving to
               create powerful solutions.
             </Text>
-            {/* 
-            <List
+
+            <Group mt={30}>
+              <a href="resume.pdf" download>
+                <Button radius="xl" size="md" className={classes.control}>
+                  Download Resume
+                </Button>
+              </a>
+
+              <a href="mailto:atharane.works@gmail.com" target="_blank">
+                <Button radius="xl" size="md" className={classes.control}>
+                  Get in touch
+                </Button>
+              </a>
+            </Group>
+
+            {/* <List
               mt={30}
               spacing="sm"
               size="sm"
               icon={
                 <ThemeIcon size={20} radius="xl" color={"#853bce"}>
-                  <IconCheck color={"#291839"} size={12} stroke={3} />
+                  <IconStar size={10} stroke={3} color={"#17111e"} />
                 </ThemeIcon>
               }
             >
@@ -126,16 +147,6 @@ export default function HeroBullets() {
                 user navigates with keyboard
               </List.Item>
             </List> */}
-
-            <Group mt={30}>
-              <Button radius="xl" size="md" className={classes.control}>
-                Download Resume
-              </Button>
-
-              <Button radius="xl" size="md" className={classes.control}>
-                View Blogs
-              </Button>
-            </Group>
           </div>
           <Image src="images/instagram.png" className={classes.image} />
         </div>
