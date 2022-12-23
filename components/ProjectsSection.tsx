@@ -22,16 +22,15 @@ const useStyles = createStyles((theme) => ({
   },
 
   title: {
-    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     fontWeight: 900,
-    color: theme.white,
+    color: "#13111c",
     lineHeight: 1.2,
     fontSize: 32,
     marginTop: theme.spacing.xs,
   },
 
   category: {
-    color: theme.white,
+    color: "#13111c",
     opacity: 0.7,
     fontWeight: 700,
     textTransform: "uppercase",
@@ -64,7 +63,7 @@ function Card({ image, title, category }: CardProps) {
         </Title>
       </div>
       <Button variant="white" color="dark">
-        Read article
+        View Project
       </Button>
     </Paper>
   );
@@ -72,15 +71,14 @@ function Card({ image, title, category }: CardProps) {
 
 const data = [
   {
-    image:
-      "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-    title: "Best forests to visit in North America",
-    category: "nature",
+    image: "images/inventory-management.png",
+    title: "Inventory Management System",
+    category: "#javascript",
   },
   {
     image:
       "https://images.unsplash.com/photo-1559494007-9f5847c49d94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-    title: "Hawaii beaches review: better than you think",
+    title: "Hash Table Visualizer",
     category: "beach",
   },
   {
@@ -109,7 +107,7 @@ const data = [
   },
 ];
 
-export default function CardsCarousel() {
+export default function ProjectsSection() {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm}px)`);
   const slides = data.map((item) => (

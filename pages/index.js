@@ -2,7 +2,7 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import { createStyles } from "@mantine/core";
 import HeroSection from "../components/HeroSection";
-import CarousalSection from "../components/CarousalSection";
+import ProjectsSection from "../components/ProjectsSection";
 import SkillsetSection from "../components/SkillsetSection";
 import ExperienceSection from "../components/ExperienceSection";
 import Footer from "../components/Footer";
@@ -33,7 +33,7 @@ export default function Home() {
           <HeroSection />
         </div>
         <SkillsetSection />
-        <CarousalSection />
+        {/* <ProjectsSection /> */}
         <ExperienceSection />
         <Footer />
       </main>

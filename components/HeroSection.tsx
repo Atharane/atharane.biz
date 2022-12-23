@@ -148,6 +148,10 @@ export default function HeroBullets() {
             </List> */}
           </div>
           <Image src="images/instagram.png" className={classes.image} />
+          {/* <iframe
+            src="https://my.spline.design/robot4legslightcopy-7bca3a84b5772d4e3a4e976face27a54/"
+            style={{border: "none"}}
+          ></iframe> */}
         </div>
       </Container>
     </div>

@@ -8,30 +8,38 @@ import {
   SimpleGrid,
   Container,
 } from "@mantine/core";
-import { IconGauge, IconUser, IconCookie } from "@tabler/icons";
 
-const mockdata = [
+const data = [
   {
-    title: "Extreme performance",
+    brand: "Digital Prudentia",
+    position: "Fullstack Developer Intern",
     description:
-      "This dust is actually a powerful poison that will even make a pro wrestler sick, Regice cloaks itself with frigid air of -328 degrees Fahrenheit",
-    icon: IconGauge,
+      "PERN stack web application development. Work also involves learning cloud computing technologies and DevOps basics.",
+    image_path: "digital-prudentia.png",
   },
   {
-    title: "Privacy focused",
+    brand: "Google Developer Student Clubs",
+    position: "Web Development Core Team Member",
     description:
-      "People say it can run at the same speed as lightning striking, Its icy body is so cold, it will not melt even if it is immersed in magma",
-    icon: IconUser,
+      "Conducted hackathons, taught web development to over 100 students, and instilled a developer mindset in emerging developers.",
+    image_path: "gdsc.png",
   },
   {
-    title: "No third parties",
+    brand: "Tantrafiesta",
+    position: "Content Lead",
     description:
-      "They’re popular, but they’re rare. Trainers who show them off recklessly may be targeted by thieves",
-    icon: IconCookie,
+      "Oversaw the development, distribution, and strategic efforts of creating messaging for Tantrafiesta, our college’s annual technical festival",
+    image_path: "tantrafiesta.webp",
   },
 ];
 
 const useStyles = createStyles((theme) => ({
+  root: {
+    background: "linear-gradient(120deg, #20242c 0%, #181622 100%)",
+    marginTop: 0,
+    borderTop: "2px solid #13111c",
+  },
+
   title: {
     fontSize: 34,
     fontWeight: 900,
@@ -40,35 +48,40 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
-  description: {
-    maxWidth: 600,
-    margin: "auto",
+  // description: {
+  //   maxWidth: 600,
+  //   margin: "auto",
 
-    "&::after": {
-      content: '""',
-      display: "block",
-      backgroundColor: theme.fn.primaryColor(),
-      width: 45,
-      height: 2,
-      marginTop: theme.spacing.sm,
-      marginLeft: "auto",
-      marginRight: "auto",
-    },
-  },
+  //   "&::after": {
+  //     content: '""',
+  //     display: "block",
+  //     backgroundColor: theme.fn.primaryColor(),
+  //     width: 45,
+  //     height: 2,
+  //     marginTop: theme.spacing.sm,
+  //     marginLeft: "auto",
+  //     marginRight: "auto",
+  //   },
+  // },
 
   card: {
-    border: `1px solid ${
-      theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[1]
-    }`,
+    backgroundColor: "#181622",
+    // boxShadow: "5px 5px 10px rgba(120, 120, 120, 0.1), -5px -5px 10px rgba(40, 40, 40, 0.1)",
   },
 
-  cardTitle: {
+  brand: {
+    fontSize: "1.2rem",
+    fontWeight: 700,
+  },
+
+  position: {
+    fontWeight: 500,
     "&::after": {
       content: '""',
       display: "block",
-      backgroundColor: theme.fn.primaryColor(),
       width: 45,
       height: 2,
+      backgroundColor: theme.fn.primaryColor(),
       marginTop: theme.spacing.sm,
     },
   },
@@ -76,17 +89,20 @@ const useStyles = createStyles((theme) => ({
 
 export default function FeaturesCards() {
   const { classes, theme } = useStyles();
-  const features = mockdata.map((feature) => (
+  const features = data.map((feature) => (
     <Card
-      key={feature.title}
+      key={feature.brand}
       shadow="md"
       radius="md"
       className={classes.card}
       p="xl"
     >
-      <feature.icon size={50} stroke={2} color={theme.fn.primaryColor()} />
-      <Text size="lg" weight={500} className={classes.cardTitle} mt="md">
-        {feature.title}
+      <img src={`images/${feature.image_path}`} alt="brand" height={30} />
+      <Text className={classes.brand} mt="md">
+        {feature.brand}
+      </Text>
+      <Text className={classes.position}>
+        {feature.position}
       </Text>
       <Text size="sm" color="dimmed" mt="sm">
         {feature.description}
@@ -94,35 +110,37 @@ export default function FeaturesCards() {
     </Card>
   ));
   return (
-    <Container size="lg" py="xl" mt={80}>
-      <Group position="center">
-        <Badge variant="filled" size="lg">
-          Best company ever
-        </Badge>
-      </Group>
+    <div className={classes.root}>
+      <Container size="lg" py="xl" mt={80}>
+        <Group position="center">
+          <Badge variant="filled" size="lg">
+            Position of Responsibility
+          </Badge>
+        </Group>
 
-      <Title order={2} className={classes.title} align="center" mt="sm">
-        Integrate effortlessly with any technology stack
-      </Title>
+        <Title order={2} className={classes.title} align="center" mt="sm">
+          Professional Background
+        </Title>
 
-      <Text
-        color="dimmed"
-        className={classes.description}
-        align="center"
-        mt="md"
-      >
-        Every once in a while, you’ll see a Golbat that’s missing some fangs.
-        This happens when hunger drives it to try biting a Steel-type Pokémon.
-      </Text>
+        {/* <Text
+          color="dimmed"
+          className={classes.description}
+          align="center"
+          mt="md"
+        >
+          Every once in a while, you’ll see a Golbat that’s missing some fangs.
+          This happens when hunger drives it to try biting a Steel-type Pokémon.
+        </Text> */}
 
-      <SimpleGrid
-        cols={3}
-        spacing="xl"
-        mt={50}
-        breakpoints={[{ maxWidth: "md", cols: 1 }]}
-      >
-        {features}
-      </SimpleGrid>
-    </Container>
+        <SimpleGrid
+          cols={3}
+          spacing="xl"
+          mt={50}
+          breakpoints={[{ maxWidth: "md", cols: 1 }]}
+        >
+          {features}
+        </SimpleGrid>
+      </Container>
+    </div>
   );
 }
