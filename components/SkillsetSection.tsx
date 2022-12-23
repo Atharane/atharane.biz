@@ -19,7 +19,7 @@ import {
 const useStyles = createStyles((theme) => ({
   wrapper: {
     marginBottom: theme.spacing.xl * 3,
-    paddingTop: theme.spacing.xl * 4,
+    paddingTop: theme.spacing.xl * 3,
     paddingBottom: theme.spacing.xl * 4,
     backgroundColor: "#13111c",
   },
@@ -49,11 +49,11 @@ const useStyles = createStyles((theme) => ({
 
 const skills = [
   {
-    title: "🦋 Frontend",
+    title: "Frontend",
     technologies: ["React", "Next.js", "TypeScript", "TailwindCSS"],
   },
   {
-    title: "🔗 Backend",
+    title: "Backend",
     technologies: [
       "Node.js",
       "Express",
@@ -64,11 +64,11 @@ const skills = [
     ],
   },
   {
-    title: "☁️ Cloud & DevOps",
-    technologies: ["Azure", "Google Cloud", "Docker", "GitHub Actions"],
+    title: "Cloud & DevOps",
+    technologies: ["Azure", "Google Cloud", "Azure DevOps", "Docker", "GitHub Actions"],
   },
   {
-    title: "🌌 Other Skills",
+    title: "Miscellaneous",
     technologies: ["Figma", "Wordpress", "Jira"],
   },
 ];

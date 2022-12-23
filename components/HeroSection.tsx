@@ -9,7 +9,6 @@ import {
   List,
   ThemeIcon,
 } from "@mantine/core";
-import { IconStar } from "@tabler/icons";
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -119,7 +118,7 @@ export default function HeroBullets() {
 
               <a href="mailto:atharane.works@gmail.com" target="_blank">
                 <Button radius="xl" size="md" className={classes.control}>
-                  Get in touch
+                  Reach Out
                 </Button>
               </a>
             </Group>
