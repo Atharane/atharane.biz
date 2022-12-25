@@ -10,9 +10,9 @@ import Footer from "../components/Footer";
 export default function Home() {
   const useStyles = createStyles((theme) => ({
     gradientWrapper: {
-      background: "red", 
-      background:
-        "linear-gradient(69deg, rgba(19,17,28,1) 0%, rgba(47,15,42,1) 100%)",
+      backgroundImage:
+        'url("images/damascus.svg"), linear-gradient(69deg, rgba(19,17,28,1) 0%, rgba(47,15,42,1) 100%)',
+
     },
   }));
 

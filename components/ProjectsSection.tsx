@@ -1,132 +1,175 @@
-import { Container } from "@mantine/core";
+import { Container, Badge, Card, Image, Group } from "@mantine/core";
 import { Carousel } from "@mantine/carousel";
 import { useMediaQuery } from "@mantine/hooks";
 import {
   createStyles,
-  Paper,
   Text,
   Title,
   Button,
   useMantineTheme,
 } from "@mantine/core";
 
-const useStyles = createStyles((theme) => ({
-  card: {
-    height: 440,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    alignItems: "flex-start",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  },
-
-  title: {
-    fontWeight: 900,
-    color: "#13111c",
-    lineHeight: 1.2,
-    fontSize: 32,
-    marginTop: theme.spacing.xs,
-  },
-
-  category: {
-    color: "#13111c",
-    opacity: 0.7,
-    fontWeight: 700,
-    textTransform: "uppercase",
-  },
-}));
-
-interface CardProps {
-  image: string;
-  title: string;
-  category: string;
-}
-
-function Card({ image, title, category }: CardProps) {
-  const { classes } = useStyles();
-
-  return (
-    <Paper
-      shadow="md"
-      p="xl"
-      radius="md"
-      sx={{ backgroundImage: `url(${image})` }}
-      className={classes.card}
-    >
-      <div>
-        <Text className={classes.category} size="xs">
-          {category}
-        </Text>
-        <Title order={3} className={classes.title}>
-          {title}
-        </Title>
-      </div>
-      <Button variant="white" color="dark">
-        View Project
-      </Button>
-    </Paper>
-  );
-}
-
-const data = [
-  {
-    image: "images/inventory-management.png",
-    title: "Inventory Management System",
-    category: "#javascript",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1559494007-9f5847c49d94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-    title: "Hash Table Visualizer",
-    category: "beach",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1608481337062-4093bf3ed404?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-    title: "Mountains at night: 12 best locations to enjoy the view",
-    category: "nature",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1507272931001-fc06c17e4f43?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-    title: "Aurora in Norway: when to visit for best experience",
-    category: "nature",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-    title: "Best places to visit this winter",
-    category: "tourism",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1582721478779-0ae163c05a60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-    title: "Active volcanos reviews: travel at your own risk",
-    category: "nature",
-  },
-];
-
 export default function ProjectsSection() {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm}px)`);
+
+  const useStyles = createStyles((theme) => ({
+    root: {
+      background: "#13111c",
+      backgroundImage:
+        'url("images/damascus.svg"), linear-gradient(115deg, #1d1e28 0%, #1d1e28 100%)',
+      // "linear-gradient(115deg, rgba(20,30,57,1) 0%, rgba(0,0,0,1) 100%)",
+    },
+
+    title: {
+      margin: "0 auto",
+      width: "fit-content",
+      fontSize: 56,
+      fontWeight: 900,
+      marginBottom: theme.spacing.lg * 2,
+    },
+
+    category: {
+      color: "#13111c",
+      opacity: 0.7,
+      fontWeight: 700,
+      textTransform: "uppercase",
+    },
+    card: {
+      background: "#1e1c2a",
+      border: "none",
+      height: 440,
+    },
+
+    imageWrapper: {
+      // cover
+      backgroundSize: "cover",
+    },
+
+    gradient: {
+      height: 200,
+      background:
+        "-webkit-gradient(linear, left bottom, left top, color-stop(1, rgba(0,0,0,0.0)),  color-stop(0, #1e1c2a))",
+    },
+
+    section: {
+      borderBottom: `1px solid ${
+        theme.colorScheme === "dark"
+          ? theme.colors.dark[4]
+          : theme.colors.gray[3]
+      }`,
+      paddingLeft: theme.spacing.md,
+      paddingRight: theme.spacing.md,
+      paddingBottom: theme.spacing.md,
+    },
+
+    like: {
+      color: theme.colors.red[6],
+    },
+
+    label: {
+      textTransform: "uppercase",
+      fontSize: theme.fontSizes.xs,
+      fontWeight: 700,
+    },
+  }));
+
+  function BadgeCard({ title, image, description, technologies }) {
+    const features = technologies.map((badge) => (
+      <Badge color={theme.colorScheme === "dark" ? "dark" : "gray"} key={badge}>
+        {badge}
+      </Badge>
+    ));
+
+    return (
+      <Card withBorder radius="md" p="md" className={classes.card}>
+        <Card.Section>
+          <div
+            className={classes.imageWrapper}
+            style={{ background: `url("${image}")`, backgroundSize: "cover" }}
+          >
+            <div className={classes.gradient}></div>
+          </div>
+        </Card.Section>
+
+        <Card.Section className={classes.section} mt="md">
+          <Group position="apart">
+            <Title>{title}</Title>
+          </Group>
+          <Text size="sm" mt="xs">
+            {description}
+          </Text>
+        </Card.Section>
+
+        <Card.Section className={classes.section}>
+          <Text mt="md" className={classes.label} color="dimmed">
+            Technologies Used
+          </Text>
+          <Group spacing={7} mt={5}>
+            {features}
+          </Group>
+        </Card.Section>
+      </Card>
+    );
+  }
+
+  const data = [
+    {
+      image: "images/contest-calendar.png",
+      title: "Contest Calendar",
+      description:
+        "A browser extension that shows upcoming hackathons and competitive programming contests. Features include sorting by platform and notifying users.",
+      technologies: ["React", "momentjs", "axios"],
+    },
+    {
+      image: "images/quizzical.png",
+      title: "Quizzical",
+      description:
+        "A simple quiz app that allows users to take quizzes on a variety of topics. Users can also view their quiz history and statistics. Built with React and Firebase. ",
+      technologies: ["React", "axios"],
+    },
+    {
+      image: "images/inventory-management.png",
+      title: "Inventory Management System",
+      description: "",
+      technologies: ["HTML", "CSS", "Javascript"],
+    },
+    {
+      image: "images/contest-calendar.png",
+      title: "Hash Table Visualizer",
+      description:
+        "Model the workings of hash tables. Animations on key-value pair insertion and deletion. Designed to assist learners in understanding the workings of data structures. An intuitive and minimal user interface.",
+      technologies: ["React", "lorem"],
+    },
+  ];
+
+  const { classes, cx } = useStyles();
+
   const slides = data.map((item) => (
     <Carousel.Slide key={item.title}>
-      <Card {...item} />
+      <BadgeCard
+        title={item.title}
+        image={item.image}
+        description={item.description}
+        technologies={item.technologies}
+      />
     </Carousel.Slide>
   ));
 
   return (
-    <Container size="lg">
-      <Carousel
-        slideSize="50%"
-        breakpoints={[{ maxWidth: "sm", slideSize: "100%", slideGap: 2 }]}
-        slideGap="xl"
-        align="start"
-        slidesToScroll={mobile ? 1 : 2}
-      >
-        {slides}
-      </Carousel>
-    </Container>
+    <div className={classes.root}>
+      <Container size="lg" pt={40} pb={40}>
+        <Title className={classes.title}>Projects</Title>
+        <Carousel
+          slideSize="50%"
+          breakpoints={[{ maxWidth: "sm", slideSize: "100%", slideGap: 2 }]}
+          slideGap="xl"
+          align="start"
+          slidesToScroll={mobile ? 1 : 2}
+        >
+          {slides}
+        </Carousel>
+      </Container>
+    </div>
   );
 }

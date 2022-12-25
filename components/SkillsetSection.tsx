@@ -68,7 +68,7 @@ const skills = [
   },
   {
     title: "Miscellaneous",
-    technologies: ["Figma", "Wordpress", "Jira"],
+    technologies: ["Postman", "Figma", "Wordpress", "Jira"],
   },
 ];
 

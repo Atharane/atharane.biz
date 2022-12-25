@@ -36,8 +36,7 @@ const data = [
 const useStyles = createStyles((theme) => ({
   root: {
     background: "linear-gradient(120deg, #20242c 0%, #181622 100%)",
-    marginTop: 0,
-    borderTop: "2px solid #13111c",
+    paddingTop: theme.spacing.xl * 2,
   },
 
   title: {
@@ -111,7 +110,7 @@ export default function FeaturesCards() {
   ));
   return (
     <div className={classes.root}>
-      <Container size="lg" py="xl" mt={80}>
+      <Container size="lg" py="xl">
         <Group position="center">
           <Badge variant="filled" size="lg">
             Position of Responsibility
