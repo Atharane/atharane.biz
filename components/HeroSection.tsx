@@ -94,7 +94,7 @@ export default function HeroBullets() {
       <Container>
         <div className={classes.inner}>
           <div className={classes.content}>
-            <Title className={classes.title}>Atharane</Title>
+            <Title className={classes.title}>Atharva Rane</Title>
             <Title className={classes.subtitle}>
               A&nbsp;
               <span className={classes.highlight}>

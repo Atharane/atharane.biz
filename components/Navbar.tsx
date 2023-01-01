@@ -14,6 +14,7 @@ const HEADER_HEIGHT = 60;
 
 const useStyles = createStyles((theme) => ({
   root: {
+    height: HEADER_HEIGHT,
     position: "relative",
     zIndex: 1,
     backgroundColor: "transparent",
@@ -38,7 +39,7 @@ const useStyles = createStyles((theme) => ({
 
   header: {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "flex-end",
     alignItems: "center",
     height: "100%",
   },
@@ -55,10 +56,10 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
-  logo: {
-    color: "crimson",
-    fontWeight: "bolder",
-  },
+  // logo: {
+  //   color: "white",
+  //   fontWeight: "bolder",
+  // },
 
   link: {
     display: "block",
@@ -127,9 +128,9 @@ export default function HeaderResponsive() {
   ));
 
   return (
-    <Header height={HEADER_HEIGHT} className={classes.root}>
+    <div className={classes.root}>
       <Container className={classes.header}>
-        <div className={classes.logo}>Atharane</div>
+        {/* <div className={classes.logo}>&lt;/&gt; Atharane</div> */}
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
@@ -149,6 +150,6 @@ export default function HeaderResponsive() {
           )}
         </Transition>
       </Container>
-    </Header>
+    </div>
   );
 }

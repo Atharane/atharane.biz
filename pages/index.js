@@ -2,6 +2,7 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import { createStyles } from "@mantine/core";
 import HeroSection from "../components/HeroSection";
+import Capsule from "../components/Capsule";
 import ProjectsSection from "../components/ProjectsSection";
 import SkillsetSection from "../components/SkillsetSection";
 import ExperienceSection from "../components/ExperienceSection";
@@ -11,8 +12,7 @@ export default function Home() {
   const useStyles = createStyles((theme) => ({
     gradientWrapper: {
       backgroundImage:
-        'url("images/damascus.svg"), linear-gradient(69deg, rgba(19,17,28,1) 0%, rgba(47,15,42,1) 100%)',
-
+        'url("images/damascus-dark.svg"), linear-gradient(69deg, rgba(19,17,28,1) 0%, rgba(47,15,42,1) 100%)',
     },
   }));
 
@@ -28,13 +28,14 @@ export default function Home() {
       </Head>
 
       <main>
+        <Capsule/>
         <div className={classes.gradientWrapper}>
           <Navbar />
           <HeroSection />
         </div>
         <SkillsetSection />
-        <ProjectsSection />
         <ExperienceSection />
+        <ProjectsSection />
         <Footer />
       </main>
     </>

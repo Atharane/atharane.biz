@@ -17,16 +17,19 @@ export default function ProjectsSection() {
     root: {
       background: "#13111c",
       backgroundImage:
-        'url("images/damascus.svg"), linear-gradient(115deg, #1d1e28 0%, #1d1e28 100%)',
+        'url("images/damascus.svg"), linear-gradient(115deg, #13111c 0%, #13111c 100%)',
       // "linear-gradient(115deg, rgba(20,30,57,1) 0%, rgba(0,0,0,1) 100%)",
     },
 
     title: {
-      margin: "0 auto",
       width: "fit-content",
-      fontSize: 56,
+      margin: "0 auto",
+      marginBottom: theme.spacing.xl * 2,
+      fontSize: 34, 
       fontWeight: 900,
-      marginBottom: theme.spacing.lg * 2,
+      [theme.fn.smallerThan("sm")]: {
+        fontSize: 24,
+      },
     },
 
     category: {
@@ -38,7 +41,6 @@ export default function ProjectsSection() {
     card: {
       background: "#1e1c2a",
       border: "none",
-      height: 440,
     },
 
     imageWrapper: {
