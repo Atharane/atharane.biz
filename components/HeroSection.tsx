@@ -43,12 +43,12 @@ const useStyles = createStyles((theme) => ({
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     fontFamily: "Clash Grotesk, sans-serif",
-    fontSize: 92,
+    fontSize: 74,
     lineHeight: 1.2,
     fontWeight: 800,
 
     [theme.fn.smallerThan("xs")]: {
-      fontSize: 52,
+      fontSize: 46,
     },
   },
 
@@ -59,7 +59,7 @@ const useStyles = createStyles((theme) => ({
     fontWeight: 800,
 
     [theme.fn.smallerThan("xs")]: {
-      fontSize: 28,
+      fontSize: 22,
     },
   },
 
@@ -148,7 +148,7 @@ export default function HeroBullets() {
             </List> */}
 
           </div>
-          <Image src="images/3dinstagram.png" className={classes.image} />
+          <Image src="images/macbook.png" className={classes.image} />
           {/* <iframe
             src="https://my.spline.design/robot4legslightcopy-7bca3a84b5772d4e3a4e976face27a54/"
             style={{border: "none"}}
