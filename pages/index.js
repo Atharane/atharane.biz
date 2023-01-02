@@ -2,7 +2,7 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import { createStyles } from "@mantine/core";
 import HeroSection from "../components/HeroSection";
-import Capsule from "../components/Capsule";
+import FloatingIcons from "../components/FloatingIcons";
 import ProjectsSection from "../components/ProjectsSection";
 import SkillsetSection from "../components/SkillsetSection";
 import ExperienceSection from "../components/ExperienceSection";
@@ -28,7 +28,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <Capsule/>
+        <FloatingIcons />
         <div className={classes.gradientWrapper}>
           <Navbar />
           <HeroSection />

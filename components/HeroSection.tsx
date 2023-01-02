@@ -91,7 +91,7 @@ export default function HeroBullets() {
   const { classes } = useStyles();
   return (
     <div className={classes.root}>
-      <Container>
+      <Container id="top">
         <div className={classes.inner}>
           <div className={classes.content}>
             <Title className={classes.title}>Atharva Rane</Title>
@@ -146,8 +146,9 @@ export default function HeroBullets() {
                 user navigates with keyboard
               </List.Item>
             </List> */}
+
           </div>
-          <Image src="images/instagram.png" className={classes.image} />
+          <Image src="images/3dinstagram.png" className={classes.image} />
           {/* <iframe
             src="https://my.spline.design/robot4legslightcopy-7bca3a84b5772d4e3a4e976face27a54/"
             style={{border: "none"}}
