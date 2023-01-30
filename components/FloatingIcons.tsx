@@ -16,17 +16,18 @@ const useStyles = createStyles((theme) => ({
   wrapper: {
     display: "flex",
     flexDirection: "column",
-    gap: "10px",
-    backgroundColor: "#181622",
+    // gap: "10px",
+    backgroundColor: "#1e1021",
   },
 
   tile: {
     width: "42px",
-    height: "42px",
+    height: "48px",
 
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    // border: "2px solid red",
 
     "&:hover": {
       backgroundColor:
@@ -36,6 +37,15 @@ const useStyles = createStyles((theme) => ({
     [theme.fn.smallerThan("md")]: {
       display: "none",
     },
+  },
+
+  uptile: {
+    width: "42px",
+    height: "42px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "black",
   },
 
   icon: {
@@ -78,7 +88,7 @@ export default function FloatingIcons() {
           <img src="images/twitter.png" alt="" className={classes.icon} />
         </a>
         {/* go to top icon tile */}
-        <a href="#top" className={classes.tile}>
+        <a href="#top" className={classes.uptile}>
           <img src="images/up-chevron.png" alt="" className={classes.icon} />
         </a>
       </div>
