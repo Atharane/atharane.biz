@@ -1,13 +1,10 @@
 import {
   createStyles,
-  Image,
   Container,
   Title,
   Button,
   Group,
   Text,
-  List,
-  ThemeIcon,
 } from "@mantine/core";
 
 const useStyles = createStyles((theme) => ({
@@ -148,7 +145,7 @@ export default function HeroBullets() {
             </List> */}
 
           </div>
-          <Image src="images/macbook.png" className={classes.image} />
+          {/* <Image src="images/macbook.png"  /> */}
           {/* <iframe
             src="https://my.spline.design/robot4legslightcopy-7bca3a84b5772d4e3a4e976face27a54/"
             style={{border: "none"}}
