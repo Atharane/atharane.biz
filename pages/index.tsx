@@ -27,7 +27,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main style={{scrollBehavior: "smooth"}}>
+      <main>
         <FloatingIcons />
         <div className={classes.gradientWrapper}>
           <Navbar />

@@ -9,7 +9,16 @@ export default class _Document extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <link
+            href="https://api.fontshare.com/v2/css?f[]=supreme@400,500,700&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@600&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />

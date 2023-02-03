@@ -18,6 +18,10 @@ const useStyles = createStyles((theme) => ({
     flexDirection: "column",
     // gap: "10px",
     backgroundColor: "#1e1021",
+
+    [theme.fn.smallerThan("md")]: {
+      display: "none",
+    },
   },
 
   tile: {
@@ -32,11 +36,7 @@ const useStyles = createStyles((theme) => ({
     "&:hover": {
       backgroundColor:
         theme.colorScheme === "dark" ? "#481741" : theme.colors.gray[0],
-    },
-
-    [theme.fn.smallerThan("md")]: {
-      display: "none",
-    },
+    }
   },
 
   uptile: {
@@ -45,7 +45,7 @@ const useStyles = createStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "black",
+    backgroundColor: "black"
   },
 
   icon: {

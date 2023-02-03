@@ -56,11 +56,6 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
-  // logo: {
-  //   color: "white",
-  //   fontWeight: "bolder",
-  // },
-
   link: {
     display: "block",
     lineHeight: 1,
@@ -103,6 +98,10 @@ const links = [
     link: "/contacts",
     label: "Get in touch",
   },
+  {
+    link: "#skillset",
+    label: "Skillset",
+  },
 ];
 
 export default function HeaderResponsive() {
@@ -129,8 +128,7 @@ export default function HeaderResponsive() {
 
   return (
     <div className={classes.root}>
-      <Container className={classes.header}>
-        {/* <div className={classes.logo}>&lt;/&gt; Atharane</div> */}
+      <Container className={classes.header} id="top">
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>

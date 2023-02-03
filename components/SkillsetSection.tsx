@@ -9,12 +9,6 @@ import {
   Grid,
   Col,
 } from "@mantine/core";
-import {
-  IconReceiptOff,
-  IconFlame,
-  IconCircleDotted,
-  IconFileCode,
-} from "@tabler/icons";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -89,7 +83,7 @@ export default function SkillsetSection() {
   ));
 
   return (
-    <div className={classes.wrapper}>
+    <div className={classes.wrapper} id="skillset">
       <Container size="lg">
         <Grid gutter={80}>
           <Col span={12} md={5}>
