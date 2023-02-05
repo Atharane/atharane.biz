@@ -1,6 +1,9 @@
 html{
   scroll-behavior: smooth;
-  width: 100%;
+}
+
+*{
+  /* outline: 2px solid crimson; */
 }
 
 /* .hidden{

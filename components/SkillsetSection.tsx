@@ -15,6 +15,7 @@ const useStyles = createStyles((theme) => ({
     paddingTop: theme.spacing.xl * 3,
     paddingBottom: theme.spacing.xl * 4,
     backgroundColor: "#13111c",
+    maxWidth: "100%",
   },
 
   title: {
@@ -58,7 +59,13 @@ const skills = [
   },
   {
     title: "Cloud & DevOps",
-    technologies: ["Azure", "Google Cloud", "Azure DevOps", "Docker", "GitHub Actions"],
+    technologies: [
+      "Azure",
+      "Google Cloud",
+      "Azure DevOps",
+      "Docker",
+      "GitHub Actions",
+    ],
   },
   {
     title: "Miscellaneous",
@@ -85,7 +92,7 @@ export default function SkillsetSection() {
   return (
     <div className={classes.wrapper} id="skillset">
       <Container size="lg">
-        <Grid gutter={80}>
+        <Grid gutter={80} style={{ maxWidth: "100vw" }} >
           <Col span={12} md={5}>
             <Title className={classes.title} order={2}>
               Skillset
